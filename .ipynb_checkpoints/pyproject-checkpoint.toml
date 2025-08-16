@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ramanlib"
+version = "0.0.1"
+authors = [
+  { name="Thomas Hafner", email="thomaspaulhafner@gmail.com" },
+]
+description = "A python package for grouped spectral visualisation and analysis. Implements many capabilities outlined in the Raman SOP by Guo et al: Guo, S., Popp, J. & Bocklitz, T. Chemometric analysis in Raman spectroscopy from experimental design to machine learning–based modeling. Nat Protoc 16, 5426–5459 (2021). https://doi.org/10.1038/s41596-021-00620-3"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
