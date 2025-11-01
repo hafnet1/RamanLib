@@ -75,7 +75,7 @@ def mean_per_group(gsc, by=None, interval=None, plot_type="separate", ci_z=1.96,
     return axes_obj
 
 
-def random_per_group(gsc, by=None, n_samples=3, plot_type="single", seed=None, **kwargs):
+def random_per_group(gsc, by=None, n_samples=3, plot_type="single", seed=None, **kwargs): # Note: fix 'label' attribute if user gives this as input
     """
     Plot n random spectra from each group in the container.
 
