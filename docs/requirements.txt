@@ -2,6 +2,6 @@ sphinx
 sphinx-rtd-theme
 sphinx-autodoc-typehints
 # add any lightweight imports needed at import-time by RamanLib
-ramnspy
+ramanspy
 seaborn
 numpy
