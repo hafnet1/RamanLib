@@ -12,7 +12,14 @@ extensions = [
     "sphinx.ext.doctest",
     "sphinx.ext.mathjax",
     "sphinx_autodoc_typehints",
+    "nbsphinx",
 ]
+
+# --- basics ---
+project = "RamanLib"
+author = "Thomas Hafner"
+html_title = "RamanLib Documentation"   # title in the browser/tab
+html_short_title = "RamanLib"           # left nav top-left title
 
 html_theme = "sphinx_rtd_theme"
 
@@ -22,6 +29,9 @@ napoleon_numpy_docstring = True
 
 # Autosummary: generate pages for functions/classes automatically
 autosummary_generate = True
+
+# nbsphinx settings
+nbsphinx_execute = "never"
 
 # Sensible autodoc defaults
 autodoc_default_options = {
