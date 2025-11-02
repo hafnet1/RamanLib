@@ -1,3 +1,28 @@
+"""
+Plotting utilities for RamanLib.
+
+This module provides convenience functions to visualize spectra stored in a
+:class:`ramanlib.core.GroupedSpectralContainer` (GSC) and derived statistics
+computed by :mod:`ramanlib.calc`. Functions are designed so that common analysis
+outputs feed directly into plotting helpers—for example:
+
+- :func:`ramanlib.calc.outliers_per_group` → :func:`ramanlib.plot.outliers_per_group`
+- :func:`ramanlib.calc.mean_difference` → :func:`ramanlib.plot.mean_difference`
+- :func:`ramanlib.calc.mean_correlation_per_group` → :func:`ramanlib.plot.mean_correlation_per_group`
+
+Most functions delegate the actual drawing to :mod:`ramanspy`’s plotting backend
+and Matplotlib/Seaborn, adding light logic for grouping, sampling, and overlays.
+
+Notes
+-----
+Return types mirror whatever the underlying plotting call returns (usually a
+Matplotlib :class:`matplotlib.axes.Axes`, a list of Axes, or a
+:class:`matplotlib.figure.Figure`), so these functions compose naturally with
+your own Matplotlib pipelines (titles, labels, styling).
+"""
+
+from __future__ import annotations
+
 import numpy as np
 import ramanspy as rp
 from .utils import _normalize_axes_obj
@@ -9,9 +34,51 @@ import warnings
 
 def mean_per_group(gsc, by=None, interval=None, plot_type="separate", ci_z=1.96, **kwargs):
     """
-    Plot mean spectrum per group using precomputed statistics from GSC.mean(include_stats=True).
-    interval: None | 'ci' | 'sd'
-        'ci' plots ± z * (std / sqrt(n)); 'sd' plots ± std.
+    Plot mean spectrum per group with optional uncertainty bands.
+
+    The group means and (optionally) per-wavenumber standard deviation and
+    confidence intervals are computed via :meth:`gsc.mean` with
+    ``include_stats=True``. Bands can represent standard deviation (``±SD``) or
+    normal-approximation confidence intervals (``± z * SD / sqrt(n)``).
+
+    Parameters
+    ----------
+    gsc : GroupedSpectralContainer
+        Input container.
+    by : str or list of str or None, optional
+        Column name(s) used to form groups. If ``None``, all rows form a single
+        group named ``"all"``. Passed to :meth:`pandas.DataFrame.groupby`.
+    interval : {None, "ci", "sd"}, optional
+        Type of band to draw around the mean. ``"sd"`` plots ``± SD``.
+        ``"ci"`` plots ``± z * SD / sqrt(n)`` with ``z=ci_z``.
+        ``None`` (default) disables bands.
+    plot_type : {"separate", "single", "single stacked"}, optional
+        Plot style passed to :func:`ramanspy.plot.spectra`. Default is
+        ``"separate"`` (one subplot per group). For ``"single stacked"``,
+        interval bands are disabled due to vertical offsets.
+    ci_z : float, optional
+        Z-score for CI bands (e.g., ``1.96`` ≈ 95% CI). Ignored if
+        ``interval != "ci"``. Default is ``1.96``.
+    **kwargs
+        Forwarded to :func:`ramanspy.plot.spectra` and Matplotlib.
+
+    Returns
+    -------
+    matplotlib.axes.Axes or list[matplotlib.axes.Axes] or matplotlib.figure.Figure
+        Whatever :func:`ramanspy.plot.spectra` returns.
+
+    See Also
+    --------
+    ramanlib.core.GroupedSpectralContainer.mean
+        Computes group means and optional per-wavenumber statistics.
+    ramanlib.plot.random_per_group
+        Sample and plot random spectra per group.
+
+    Notes
+    -----
+    Bands require the presence of ``'std_vector'`` and, for ``interval="ci"``,
+    also ``'n'`` in the dataframe returned by ``gsc.mean(include_stats=True)``.
+
     """
     # 1) Compute group means + stats once
     means_gsc = gsc.mean(by=by, include_stats=True, ddof=1)
@@ -77,18 +144,35 @@ def mean_per_group(gsc, by=None, interval=None, plot_type="separate", ci_z=1.96,
 
 def random_per_group(gsc, by=None, n_samples=3, plot_type="single", seed=None, **kwargs): # Note: fix 'label' attribute if user gives this as input
     """
-    Plot n random spectra from each group in the container.
+    Plot a random sample of spectra from each group.
 
-    Parameters:
-        gsc (GroupedSpectralContainer)
-        by (str or list or callable): Metadata column(s) or grouping method.
-        n_samples (int): Number of spectra to sample per group.
-        plot_type (str): Passed to rp.plot.spectra.
-        seed (int or None): Random seed for reproducible sampling. Default None.
-        **kwargs: Forwarded to rp.plot.spectra.
+    Parameters
+    ----------
+    gsc : GroupedSpectralContainer
+        Input container.
+    by : str or list of str or None, optional
+        Column name(s) to group by. If ``None``, samples from all rows as one group.
+    n_samples : int, optional
+        Number of spectra to sample per group. If a group has fewer than
+        ``n_samples`` rows, sampling with replacement is used to reach ``n_samples``.
+        Default is ``3``.
+    plot_type : {"single", "separate", "single stacked"}, optional
+        Plot style passed to :func:`ramanspy.plot.spectra`. Default ``"single"``.
+    seed : int or None, optional
+        Random seed for reproducibility. Default ``None``.
+    **kwargs
+        Forwarded to :func:`ramanspy.plot.spectra` and Matplotlib.
 
-    Returns:
-        Axes | list[Axes] | Figure: Whatever rp.plot.spectra returns.
+    Returns
+    -------
+    matplotlib.axes.Axes or list[matplotlib.axes.Axes] or matplotlib.figure.Figure
+        Whatever :func:`ramanspy.plot.spectra` returns.
+
+    See Also
+    --------
+    ramanlib.plot.mean_per_group
+        Plot group means with optional uncertainty bands.
+
     """
     rng = random.Random(seed)  # local RNG
 
@@ -116,22 +200,42 @@ def random_per_group(gsc, by=None, n_samples=3, plot_type="single", seed=None, *
 
 def outliers_per_group(gsc, results, **kwargs):
     """
-    Plot outlier spectra per group and overlay the group mean.
-    Layout is fixed to 'separate' for robustness. Additional keyword args
-    are forwarded to rp.plot.spectra (e.g., color, linewidth, title, ax, etc.).
+    Plot detected outlier spectra for each group and overlay the group mean.
+
+    This is the plotting counterpart of :func:`ramanlib.calc.outliers_per_group`.
+    It expects the exact mapping produced by that function and draws, for each
+    group, the selected "outlier" spectra in a separate subplot, with the group's
+    mean spectrum overlaid.
 
     Parameters
     ----------
     gsc : GroupedSpectralContainer
+        The container from which spectra are retrieved by global row index.
     results : dict[str, tuple[list[int], rp.Spectrum]]
-        Output of calc_outlier_indices_by_group: {group_label: (row_indices, mean_spectrum)}
-    **kwargs :
-        Forwarded to rp.plot.spectra, EXCEPT 'plot_type' which is ignored.
+        Output mapping from :func:`ramanlib.calc.outliers_per_group`, i.e.,
+        ``{ group_label: ([row_indices_into_gsc_df], mean_spectrum) }``.
+    **kwargs
+        Forwarded to :func:`ramanspy.plot.spectra` (e.g., ``color``, ``linewidth``,
+        ``title``, ``ax``). Any provided ``plot_type`` is ignored (layout is fixed
+        to ``"separate"`` for robustness and clarity).
 
     Returns
     -------
-    axes_obj :
-        Whatever rp.plot.spectra returns (Axes | list[Axes] | Figure).
+    matplotlib.axes.Axes or list[matplotlib.axes.Axes] or matplotlib.figure.Figure or None
+        Whatever :func:`ramanspy.plot.spectra` returns. Returns ``None`` if
+        ``results`` is empty.
+
+    See Also
+    --------
+    ramanlib.calc.outliers_per_group
+        Compute per-group outlier indices and each group's mean spectrum.
+
+    Notes
+    -----
+    Overlays the supplied per-group mean spectrum in red. No legend/tight layout
+    adjustments are performed here, so you can customize them upstream or
+    downstream as needed.
+
     """
     if not results:
         return None
@@ -158,14 +262,7 @@ def outliers_per_group(gsc, results, **kwargs):
     )
 
     # Normalize to a list of Axes to overlay the mean
-    if isinstance(axes_obj, list):
-        axes_list = axes_obj
-    elif hasattr(axes_obj, "fill_between"):   # single Axes
-        axes_list = [axes_obj]
-    elif hasattr(axes_obj, "get_axes"):       # Figure
-        axes_list = axes_obj.get_axes()
-    else:
-        axes_list = []
+    axes_list = _normalize_axes_obj(axes_obj)
 
     # Overlay the mean line (no labels/legend/tight_layout/show here)
     for ax, mean_spec in zip(axes_list, means_for_overlay):
@@ -175,7 +272,32 @@ def outliers_per_group(gsc, results, **kwargs):
 
 
 def baseline(spectrum, baseline_process, **kwargs):
-    '''Plot the baseline resulting from a single baseline process alongside its raw and baseline-subtracted spectra'''
+    """
+    Plot a spectrum, its estimated baseline, and the baseline-corrected spectrum.
+
+    Parameters
+    ----------
+    spectrum : rp.Spectrum
+        Input spectrum.
+    baseline_process : object
+        Any object exposing ``.apply(Spectrum) -> Spectrum`` that performs baseline
+        correction (e.g., a RamanSPy pipeline step).
+    **kwargs
+        Forwarded to :func:`ramanspy.plot.spectra` (e.g., ``ax``, ``alpha``,
+        ``linewidth``, color styling, etc.).
+
+    Returns
+    -------
+    matplotlib.axes.Axes or list[matplotlib.axes.Axes] or matplotlib.figure.Figure
+        Whatever :func:`ramanspy.plot.spectra` returns.
+
+    Notes
+    -----
+    The baseline is computed as ``baseline = original - corrected`` and plotted
+    alongside the original and corrected spectra with fixed labels:
+    ``["Original spectrum", "removed baseline", "corrected spectrum"]``.
+
+    """
     corrected_spectrum = baseline_process.apply(spectrum)
     baseline = rp.Spectrum(spectrum.spectral_data - corrected_spectrum.spectral_data, spectrum.spectral_axis)
     spectra = [spectrum, baseline, corrected_spectrum]
@@ -184,8 +306,32 @@ def baseline(spectrum, baseline_process, **kwargs):
 
 
 def n_baselines(raw_gsc, baseline_process, process_name, n_samples=3, figsize=(8,7), seed=None):
-    '''Plot n randomly selected spectra along with their baselines and corrected spectra in a single figure
-    with mulitple subplots'''
+    """
+    Plot several randomly selected spectra with their baselines in a vertical figure.
+
+    Parameters
+    ----------
+    raw_gsc : GroupedSpectralContainer
+        Container from which spectra are sampled.
+    baseline_process : object
+        Any object exposing ``.apply(Spectrum) -> Spectrum`` that performs baseline
+        correction (e.g., a RamanSPy pipeline step).
+    process_name : str
+        Title displayed above the figure.
+    n_samples : int, optional
+        Number of spectra (rows) to sample. Default ``3``.
+    figsize : tuple[float, float], optional
+        Matplotlib figure size passed to :func:`matplotlib.pyplot.subplots`.
+        Default ``(8, 7)``.
+    seed : int or None, optional
+        Random seed used when sampling. Default ``None``.
+
+    Returns
+    -------
+    list[matplotlib.axes.Axes]
+        The list of axes for each subplot row.
+
+    """
     spec_samples = raw_gsc.df.sample(n=n_samples)["spectrum"]
     fig, axs = plt.subplots(n_samples, 1, figsize=figsize)
     for i, spec in enumerate(spec_samples):
@@ -197,8 +343,27 @@ def n_baselines(raw_gsc, baseline_process, process_name, n_samples=3, figsize=(8
 
 
 def compare_baselines(spectrum, baseline_processes, process_names, figsize=(8,7)):
-    '''Plot a single spectrum with multiple different baseline processes applied to compare how
-    the algorithm handles that spectrum'''
+    """
+    Compare multiple baseline algorithms on the same spectrum.
+
+    Parameters
+    ----------
+    spectrum : rp.Spectrum
+        Input spectrum to be corrected by each baseline process.
+    baseline_processes : list
+        Sequence of objects exposing ``.apply(Spectrum) -> Spectrum``.
+    process_names : list[str]
+        Display names for each process. Must have the same length and order as
+        ``baseline_processes``.
+    figsize : tuple[float, float], optional
+        Matplotlib figure size. Default ``(8, 7)``.
+
+    Returns
+    -------
+    list[matplotlib.axes.Axes]
+        The list of axes for each subplot row.
+
+    """
     fig, axs = plt.subplots(len(baseline_processes), 1, figsize=figsize)
     for i, process in enumerate(baseline_processes):
         baseline(spectrum, process, ax=axs[i], title=f"{process_names[i]}", xlabel="")
@@ -209,16 +374,38 @@ def compare_baselines(spectrum, baseline_processes, process_names, figsize=(8,7)
 
 def mean_difference(diff_spectrum, ci_band, label="Difference in Means", **kwargs):
     """
-    Plot the difference between two mean spectra with a 95% CI band centered at 0.
+    Plot a difference-of-means spectrum with a two-sided CI band centered at zero.
 
-    Parameters:
-        diff_spectrum (rp.Spectrum): Difference between two mean spectra.
-        ci_band (np.ndarray): 1D array of CI boundsz.
-        title (str): Plot title.
-        color (str): Line color.
-        **kwargs: Additional matplotlib parameters forwarded to rp.plot.spectra().
+    This is the plotting counterpart of :func:`ramanlib.calc.mean_difference`.
+    Pass in the tuple returned by that function’s computation step.
+
+    Parameters
+    ----------
+    diff_spectrum : rp.Spectrum
+        The difference spectrum (e.g., group A mean minus group B mean).
+        Typically the first element returned by
+        :func:`ramanlib.calc.mean_difference`.
+    ci_band : numpy.ndarray
+        One-dimensional nonnegative array giving the half-width of the symmetric
+        confidence band at each wavenumber (i.e., plot ``± ci_band``). Typically
+        the second element returned by :func:`ramanlib.calc.mean_difference`.
+    label : str, optional
+        Legend label for the difference trace. Default ``"Difference in Means"``.
+    **kwargs
+        Forwarded to :func:`ramanspy.plot.spectra`. If ``plot_type`` is supplied,
+        it is ignored and a warning is issued (this plot always uses ``"single"``).
+
+    Returns
+    -------
+    matplotlib.axes.Axes or list[matplotlib.axes.Axes] or matplotlib.figure.Figure
+        Whatever :func:`ramanspy.plot.spectra` returns.
+
+    Notes
+    -----
+    The shaded band is drawn as ``[-ci_band, +ci_band]`` about zero on the same
+    x-axis as ``diff_spectrum``. A horizontal reference line at ``y=0`` is added.
+
     """
-
     if "plot_type" in kwargs.keys():
         warnings.warn('Only plot_type="single" is supported for mean_difference')
         kwargs.pop("plot_type")
@@ -238,20 +425,40 @@ def mean_correlation_per_group(
     annot=True,
     cmap="coolwarm",
     figsize=(8, 6),
-    **kwargs
+    **kwargs,
 ):
     """
-    Plot a heatmap of the correlation matrix between group mean spectra.
+    Plot a heatmap of correlations between per-group mean spectra.
 
-    Parameters:
-        correlation_matrix (pd.DataFrame): Correlation matrix to plot.
-        title (str): Title of the plot.
-        vmin (float): Minimum value for heatmap color scale.
-        vmax (float): Maximum value for heatmap color scale.
-        annot (bool): Whether to annotate cells with values.
-        cmap (str): Color map to use for the heatmap.
-        figsize (tuple): Figure size.
-        **kwargs: Additional keyword arguments passed to seaborn.heatmap().
+    This is the plotting counterpart of
+    :func:`ramanlib.calc.mean_correlation_per_group`. Pass in the
+    square correlation matrix that function returns.
+
+    Parameters
+    ----------
+    correlation_matrix : pandas.DataFrame
+        Square matrix of correlation coefficients; index/columns are group labels
+        in the same order used to compute the means.
+    title : str, optional
+        Figure title. Default ``"Correlation Matrix of Raman Spectra"``.
+    vmin : float, optional
+        Lower bound for the color scale. Default ``0``.
+    vmax : float, optional
+        Upper bound for the color scale. Default ``1``.
+    annot : bool, optional
+        Whether to annotate each cell with its numeric value. Default ``True``.
+    cmap : str, optional
+        Colormap passed to :func:`seaborn.heatmap`. Default ``"coolwarm"``.
+    figsize : tuple[float, float], optional
+        Matplotlib figure size. Default ``(8, 6)``.
+    **kwargs
+        Additional keyword arguments forwarded to :func:`seaborn.heatmap`.
+
+    Returns
+    -------
+    matplotlib.axes.Axes
+        The Axes containing the heatmap.
+
     """
     plt.figure(figsize=figsize)
     sns.heatmap(correlation_matrix, annot=annot, cmap=cmap, vmin=vmin, vmax=vmax, **kwargs)

@@ -2,7 +2,7 @@
 Core container primitives for RamanLib.
 
 This module defines :class:`GroupedSpectralContainer`, a thin wrapper around a
-:pandas:`pandas.DataFrame` whose first-class column is ``"spectrum"`` containing
+:class:`pandas.DataFrame` whose first-class column is ``"spectrum"`` containing
 :mod:`ramanspy` ``Spectrum`` objects (one per row). All other columns are free-form
 metadata (strings, numbers, categories, etc.) that stay aligned to each spectrum.
 
