@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ramanlib.plot &mdash; RamanLib Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ramanlib.calc" href="ramanlib.calc.html" />
+    <link rel="prev" title="ramanlib.core" href="ramanlib.core.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            RamanLib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ramanlib.core.html">ramanlib.core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ramanlib.core.html#ramanlib.core.GroupedSpectralContainer"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.apply_pipeline"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.apply_pipeline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.copy"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.from_dataframe"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.from_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.mean"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.mean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.plot_mean"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.plot_mean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.plot_random"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.plot_random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.to_spectral_container"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.to_spectral_container()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ramanlib.plot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ramanlib.plot.baseline"><code class="docutils literal notranslate"><span class="pre">baseline()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ramanlib.plot.compare_baselines"><code class="docutils literal notranslate"><span class="pre">compare_baselines()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ramanlib.plot.mean_correlation_per_group"><code class="docutils literal notranslate"><span class="pre">mean_correlation_per_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ramanlib.plot.mean_difference"><code class="docutils literal notranslate"><span class="pre">mean_difference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ramanlib.plot.mean_per_group"><code class="docutils literal notranslate"><span class="pre">mean_per_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ramanlib.plot.n_baselines"><code class="docutils literal notranslate"><span class="pre">n_baselines()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ramanlib.plot.outliers_per_group"><code class="docutils literal notranslate"><span class="pre">outliers_per_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ramanlib.plot.random_per_group"><code class="docutils literal notranslate"><span class="pre">random_per_group()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ramanlib.calc.html">ramanlib.calc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ramanlib.calc.html#ramanlib.calc.mean_correlation_per_group"><code class="docutils literal notranslate"><span class="pre">mean_correlation_per_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ramanlib.calc.html#ramanlib.calc.mean_difference"><code class="docutils literal notranslate"><span class="pre">mean_difference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ramanlib.calc.html#ramanlib.calc.outliers_per_group"><code class="docutils literal notranslate"><span class="pre">outliers_per_group()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ramanlib.calib.html">ramanlib.calib</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ramanlib.calib.html#ramanlib.calib.fit_peak"><code class="docutils literal notranslate"><span class="pre">fit_peak()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ramanlib.calib.html#ramanlib.calib.get_gsc_wn_shifts"><code class="docutils literal notranslate"><span class="pre">get_gsc_wn_shifts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ramanlib.calib.html#ramanlib.calib.get_wn_shift"><code class="docutils literal notranslate"><span class="pre">get_wn_shift()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ramanlib.analysis.html">ramanlib.analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ramanlib.analysis.html#ramanlib.analysis.CLS"><code class="docutils literal notranslate"><span class="pre">CLS()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ramanlib.utils.html">ramanlib.utils</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/example_notebook.html">Example Notebook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/example_notebook.html#Next-Steps-for-Development:">Next Steps for Development:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/example_notebook.html#Useful-Sources">Useful Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/example_notebook.html#Import-packages">Import packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/example_notebook.html#Code-Examples">Code Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Loading-Raman-Data-From-.csv-File">Loading Raman Data From .csv File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Visualising-Raw-Data">Visualising Raw Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Indexing-data-using-Grouped-Spectral-Containers">Indexing data using Grouped Spectral Containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Getting-the-Mean-Spectra-of-groups-from-a-GroupedSpectralContainer">Getting the Mean Spectra of groups from a GroupedSpectralContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Calibrate-Raw-Spectra">Calibrate Raw Spectra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/example_notebook.html#Example:-Detecting-wavenumber-shift-from-internal-Si-calibration-standard">Example: Detecting wavenumber shift from internal Si calibration standard</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Choose-Best-Baseline-Subtraction-Algorithm">Choose Best Baseline Subtraction Algorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Pipeline">Pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Visualising-Preprocessed-Spectra">Visualising Preprocessed Spectra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/example_notebook.html#Individual-Spectra">Individual Spectra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/example_notebook.html#Mean-Spectra">Mean Spectra</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Quality-Control">Quality Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Between-Group-Analysis">Between-Group Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/example_notebook.html#Difference-in-Mean-Spectra">Difference in Mean Spectra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/example_notebook.html#Correlation-Coefficient-by-Annotation">Correlation Coefficient by Annotation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/example_notebook.html#Correlation-Coefficient-by-Replicate">Correlation Coefficient by Replicate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/example_notebook.html#Next-step:-Loading-and-score-plots-(Guo-et-al-SOP-step-23)">Next step: Loading and score plots (Guo et al SOP step 23)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/example_notebook.html#Classical-Least-Squares-for-Spectral-Subtraction">Classical Least Squares for Spectral Subtraction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">RamanLib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Documentation</a></li>
+      <li class="breadcrumb-item active">ramanlib.plot</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/generated/ramanlib.plot.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ramanlib.plot">
+<span id="ramanlib-plot"></span><h1>ramanlib.plot<a class="headerlink" href="#module-ramanlib.plot" title="Link to this heading"></a></h1>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ramanlib.plot.baseline" title="ramanlib.plot.baseline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">baseline</span></code></a>(spectrum, baseline_process, **kwargs)</p></td>
+<td><p>Plot the baseline resulting from a single baseline process alongside its raw and baseline-subtracted spectra</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ramanlib.plot.compare_baselines" title="ramanlib.plot.compare_baselines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compare_baselines</span></code></a>(spectrum, ...[, figsize])</p></td>
+<td><p>Plot a single spectrum with multiple different baseline processes applied to compare how the algorithm handles that spectrum</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ramanlib.plot.mean_correlation_per_group" title="ramanlib.plot.mean_correlation_per_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_correlation_per_group</span></code></a>(correlation_matrix)</p></td>
+<td><p>Plot a heatmap of the correlation matrix between group mean spectra.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ramanlib.plot.mean_difference" title="ramanlib.plot.mean_difference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_difference</span></code></a>(diff_spectrum, ci_band[, label])</p></td>
+<td><p>Plot the difference between two mean spectra with a 95% CI band centered at 0.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ramanlib.plot.mean_per_group" title="ramanlib.plot.mean_per_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_per_group</span></code></a>(gsc[, by, interval, ...])</p></td>
+<td><p>Plot mean spectrum per group using precomputed statistics from GSC.mean(include_stats=True). interval: None | 'ci' | 'sd'     'ci' plots ± z * (std / sqrt(n)); 'sd' plots ± std.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ramanlib.plot.n_baselines" title="ramanlib.plot.n_baselines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_baselines</span></code></a>(raw_gsc, baseline_process, ...)</p></td>
+<td><p>Plot n randomly selected spectra along with their baselines and corrected spectra in a single figure with mulitple subplots</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ramanlib.plot.outliers_per_group" title="ramanlib.plot.outliers_per_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">outliers_per_group</span></code></a>(gsc, results, **kwargs)</p></td>
+<td><p>Plot outlier spectra per group and overlay the group mean.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ramanlib.plot.random_per_group" title="ramanlib.plot.random_per_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_per_group</span></code></a>(gsc[, by, n_samples, ...])</p></td>
+<td><p>Plot n random spectra from each group in the container.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="ramanlib.plot.baseline">
+<span class="sig-prename descclassname"><span class="pre">ramanlib.plot.</span></span><span class="sig-name descname"><span class="pre">baseline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectrum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline_process</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ramanlib/plot.html#baseline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ramanlib.plot.baseline" title="Link to this definition"></a></dt>
+<dd><p>Plot the baseline resulting from a single baseline process alongside its raw and baseline-subtracted spectra</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ramanlib.plot.compare_baselines">
+<span class="sig-prename descclassname"><span class="pre">ramanlib.plot.</span></span><span class="sig-name descname"><span class="pre">compare_baselines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectrum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline_processes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(8,</span> <span class="pre">7)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ramanlib/plot.html#compare_baselines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ramanlib.plot.compare_baselines" title="Link to this definition"></a></dt>
+<dd><p>Plot a single spectrum with multiple different baseline processes applied to compare how
+the algorithm handles that spectrum</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ramanlib.plot.mean_correlation_per_group">
+<span class="sig-prename descclassname"><span class="pre">ramanlib.plot.</span></span><span class="sig-name descname"><span class="pre">mean_correlation_per_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">correlation_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Correlation</span> <span class="pre">Matrix</span> <span class="pre">of</span> <span class="pre">Raman</span> <span class="pre">Spectra'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'coolwarm'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(8,</span> <span class="pre">6)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ramanlib/plot.html#mean_correlation_per_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ramanlib.plot.mean_correlation_per_group" title="Link to this definition"></a></dt>
+<dd><p>Plot a heatmap of the correlation matrix between group mean spectra.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>correlation_matrix (pd.DataFrame): Correlation matrix to plot.
+title (str): Title of the plot.
+vmin (float): Minimum value for heatmap color scale.
+vmax (float): Maximum value for heatmap color scale.
+annot (bool): Whether to annotate cells with values.
+cmap (str): Color map to use for the heatmap.
+figsize (tuple): Figure size.
+<a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs: Additional keyword arguments passed to seaborn.heatmap().</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ramanlib.plot.mean_difference">
+<span class="sig-prename descclassname"><span class="pre">ramanlib.plot.</span></span><span class="sig-name descname"><span class="pre">mean_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diff_spectrum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ci_band</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Difference</span> <span class="pre">in</span> <span class="pre">Means'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ramanlib/plot.html#mean_difference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ramanlib.plot.mean_difference" title="Link to this definition"></a></dt>
+<dd><p>Plot the difference between two mean spectra with a 95% CI band centered at 0.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>diff_spectrum (rp.Spectrum): Difference between two mean spectra.
+ci_band (np.ndarray): 1D array of CI boundsz.
+title (str): Plot title.
+color (str): Line color.
+<a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs: Additional matplotlib parameters forwarded to rp.plot.spectra().</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ramanlib.plot.mean_per_group">
+<span class="sig-prename descclassname"><span class="pre">ramanlib.plot.</span></span><span class="sig-name descname"><span class="pre">mean_per_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gsc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'separate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ci_z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.96</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ramanlib/plot.html#mean_per_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ramanlib.plot.mean_per_group" title="Link to this definition"></a></dt>
+<dd><p>Plot mean spectrum per group using precomputed statistics from GSC.mean(include_stats=True).
+interval: None | ‘ci’ | ‘sd’</p>
+<blockquote>
+<div><p>‘ci’ plots ± z * (std / sqrt(n)); ‘sd’ plots ± std.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ramanlib.plot.n_baselines">
+<span class="sig-prename descclassname"><span class="pre">ramanlib.plot.</span></span><span class="sig-name descname"><span class="pre">n_baselines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_gsc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline_process</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(8,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ramanlib/plot.html#n_baselines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ramanlib.plot.n_baselines" title="Link to this definition"></a></dt>
+<dd><p>Plot n randomly selected spectra along with their baselines and corrected spectra in a single figure
+with mulitple subplots</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ramanlib.plot.outliers_per_group">
+<span class="sig-prename descclassname"><span class="pre">ramanlib.plot.</span></span><span class="sig-name descname"><span class="pre">outliers_per_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gsc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ramanlib/plot.html#outliers_per_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ramanlib.plot.outliers_per_group" title="Link to this definition"></a></dt>
+<dd><p>Plot outlier spectra per group and overlay the group mean.
+Layout is fixed to ‘separate’ for robustness. Additional keyword args
+are forwarded to rp.plot.spectra (e.g., color, linewidth, title, ax, etc.).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gsc</strong> (<a class="reference internal" href="ramanlib.core.html#ramanlib.core.GroupedSpectralContainer" title="ramanlib.core.GroupedSpectralContainer"><em>GroupedSpectralContainer</em></a>)</p></li>
+<li><p><strong>results</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>tuple</em><em>[</em><em>list</em><em>[</em><em>int</em><em>]</em><em>, </em><em>rp.Spectrum</em><em>]</em><em>]</em>) – Output of calc_outlier_indices_by_group: {group_label: (row_indices, mean_spectrum)}</p></li>
+<li><p><strong>**kwargs</strong> – Forwarded to rp.plot.spectra, EXCEPT ‘plot_type’ which is ignored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Whatever rp.plot.spectra returns (Axes | list[Axes] | Figure).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>axes_obj</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ramanlib.plot.random_per_group">
+<span class="sig-prename descclassname"><span class="pre">ramanlib.plot.</span></span><span class="sig-name descname"><span class="pre">random_per_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gsc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ramanlib/plot.html#random_per_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ramanlib.plot.random_per_group" title="Link to this definition"></a></dt>
+<dd><p>Plot n random spectra from each group in the container.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>gsc (GroupedSpectralContainer)
+by (str or list or callable): Metadata column(s) or grouping method.
+n_samples (int): Number of spectra to sample per group.
+plot_type (str): Passed to rp.plot.spectra.
+seed (int or None): Random seed for reproducible sampling. Default None.
+<a href="#id5"><span class="problematic" id="id6">**</span></a>kwargs: Forwarded to rp.plot.spectra.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Axes | list[Axes] | Figure: Whatever rp.plot.spectra returns.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ramanlib.core.html" class="btn btn-neutral float-left" title="ramanlib.core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ramanlib.calc.html" class="btn btn-neutral float-right" title="ramanlib.calc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

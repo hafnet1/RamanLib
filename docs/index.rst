@@ -12,16 +12,13 @@ RamanLib Documentation
    :maxdepth: 2
    :caption: Documentation
 
-   api/index   <!-- our custom API landing from 2a -->
+   api/index
 
 .. toctree::
    :maxdepth: 2
    :caption: Guides
 
-   guides/overview
-   guides/workflow_basics
-   guides/advanced_plotting
-   guides/batch_processing
+   guides/example_notebook
 
 External Links
 --------------

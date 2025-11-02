@@ -1,0 +1,1301 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example Notebook &mdash; RamanLib Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+      <script src="../../../../../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../../../../../../../../../index.html" class="icon icon-home">
+            RamanLib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../api/index.html">RamanLib Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.core.html">ramanlib.core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.core.html#ramanlib.core.GroupedSpectralContainer"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.apply_pipeline"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.apply_pipeline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.copy"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.from_dataframe"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.from_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.mean"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.mean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.plot_mean"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.plot_mean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.plot_random"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.plot_random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.core.html#ramanlib.core.GroupedSpectralContainer.to_spectral_container"><code class="docutils literal notranslate"><span class="pre">GroupedSpectralContainer.to_spectral_container()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.plot.html">ramanlib.plot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.plot.html#ramanlib.plot.baseline"><code class="docutils literal notranslate"><span class="pre">baseline()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.plot.html#ramanlib.plot.compare_baselines"><code class="docutils literal notranslate"><span class="pre">compare_baselines()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.plot.html#ramanlib.plot.mean_correlation_per_group"><code class="docutils literal notranslate"><span class="pre">mean_correlation_per_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.plot.html#ramanlib.plot.mean_difference"><code class="docutils literal notranslate"><span class="pre">mean_difference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.plot.html#ramanlib.plot.mean_per_group"><code class="docutils literal notranslate"><span class="pre">mean_per_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.plot.html#ramanlib.plot.n_baselines"><code class="docutils literal notranslate"><span class="pre">n_baselines()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.plot.html#ramanlib.plot.outliers_per_group"><code class="docutils literal notranslate"><span class="pre">outliers_per_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.plot.html#ramanlib.plot.random_per_group"><code class="docutils literal notranslate"><span class="pre">random_per_group()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.calc.html">ramanlib.calc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.calc.html#ramanlib.calc.mean_correlation_per_group"><code class="docutils literal notranslate"><span class="pre">mean_correlation_per_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.calc.html#ramanlib.calc.mean_difference"><code class="docutils literal notranslate"><span class="pre">mean_difference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.calc.html#ramanlib.calc.outliers_per_group"><code class="docutils literal notranslate"><span class="pre">outliers_per_group()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.calib.html">ramanlib.calib</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.calib.html#ramanlib.calib.fit_peak"><code class="docutils literal notranslate"><span class="pre">fit_peak()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.calib.html#ramanlib.calib.get_gsc_wn_shifts"><code class="docutils literal notranslate"><span class="pre">get_gsc_wn_shifts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.calib.html#ramanlib.calib.get_wn_shift"><code class="docutils literal notranslate"><span class="pre">get_wn_shift()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.analysis.html">ramanlib.analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.analysis.html#ramanlib.analysis.CLS"><code class="docutils literal notranslate"><span class="pre">CLS()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../api/generated/ramanlib.utils.html">ramanlib.utils</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html">Example Notebook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Import-packages">Import packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Code-Examples">Code Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Loading-Raman-Data-From-.csv-File">Loading Raman Data From .csv File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Visualising-Raw-Data">Visualising Raw Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Indexing-data-using-Grouped-Spectral-Containers">Indexing data using Grouped Spectral Containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Getting-the-Mean-Spectra-of-groups-from-a-GroupedSpectralContainer">Getting the Mean Spectra of groups from a GroupedSpectralContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Calibrate-Raw-Spectra">Calibrate Raw Spectra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Example:-Detecting-wavenumber-shift-from-internal-Si-calibration-standard">Example: Detecting wavenumber shift from internal Si calibration standard</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Choose-Best-Baseline-Subtraction-Algorithm">Choose Best Baseline Subtraction Algorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Pipeline">Pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Visualising-Preprocessed-Spectra">Visualising Preprocessed Spectra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Individual-Spectra">Individual Spectra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Mean-Spectra">Mean Spectra</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Quality-Control">Quality Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Between-Group-Analysis">Between-Group Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Difference-in-Mean-Spectra">Difference in Mean Spectra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Correlation-Coefficient-by-Annotation">Correlation Coefficient by Annotation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Correlation-Coefficient-by-Replicate">Correlation Coefficient by Replicate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Next-step:-Loading-and-score-plots-(Guo-et-al-SOP-step-23)">Next step: Loading and score plots (Guo et al SOP step 23)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../guides/example_notebook.html#Classical-Least-Squares-for-Spectral-Subtraction">Classical Least Squares for Spectral Subtraction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../../../../index.html">RamanLib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Example Notebook</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../../../../../_sources/_build/html/_build/doctrees/nbsphinx/_build/doctrees/nbsphinx/guides/example_notebook.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Example-Notebook">
+<h1>Example Notebook<a class="headerlink" href="#Example-Notebook" title="Link to this heading"></a></h1>
+<p>A notebook with example usage of RamanLib capabilities, and example code to be adapted for your own Raman data analysis needs.</p>
+<section id="Next-Steps-for-Development:">
+<h2>Next Steps for Development:<a class="headerlink" href="#Next-Steps-for-Development:" title="Link to this heading"></a></h2>
+<p>Preprocessing:</p>
+<ul class="simple">
+<li><p>Implement automatic substrate removal:</p>
+<ul>
+<li><p><a class="reference external" href="https://pubs.rsc.org/en/content/articlelanding/2009/an/b821856k">https://pubs.rsc.org/en/content/articlelanding/2009/an/b821856k</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1016%2Fj.forsciint.2013.04.033">https://doi.org/10.1016%2Fj.forsciint.2013.04.033</a></p></li>
+</ul>
+</li>
+<li><p>And substrate removal for heterogenous substrate (multivariate curve resolution) (e.g. in forensic analysis)</p>
+<ul>
+<li><p><a class="reference external" href="https://www.nature.com/articles/s41596-021-00620-3#ref-CR55">https://www.nature.com/articles/s41596-021-00620-3#ref-CR55</a></p></li>
+</ul>
+</li>
+<li><p>Implement automatic baseline optimisation from Guo and Bocklitz:</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1039%2FC6AN00041J">https://doi.org/10.1039%2FC6AN00041J</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="Useful-Sources">
+<h2>Useful Sources<a class="headerlink" href="#Useful-Sources" title="Link to this heading"></a></h2>
+<p>RamanSPy docs: <a class="reference external" href="https://ramanspy.readthedocs.io/en/latest/">https://ramanspy.readthedocs.io/en/latest/</a></p>
+<p>Guo et al Raman Data Analysis SOP paper and data availability: <a class="reference external" href="https://www.nature.com/articles/s41596-021-00620-3">https://www.nature.com/articles/s41596-021-00620-3</a></p>
+<p>Worked example using CLS regression: <a class="reference external" href="https://medium.com/data-science/data-science-for-raman-spectroscopy-a-practical-example-e81c56cf25f">https://medium.com/data-science/data-science-for-raman-spectroscopy-a-practical-example-e81c56cf25f</a></p>
+<p>Raman Spectrum of E2: <a class="reference external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6201238/">https://pmc.ncbi.nlm.nih.gov/articles/PMC6201238/</a></p>
+<p>Carly Shea’s slides on E2 peak identification: <a class="reference external" href="https://docs.google.com/presentation/d/1n_KoqyFBQshDlwcOG39hBMPghaZAIIzefnRZgJ6n77w/edit?usp=sharing">https://docs.google.com/presentation/d/1n_KoqyFBQshDlwcOG39hBMPghaZAIIzefnRZgJ6n77w/edit?usp=sharing</a></p>
+<p>Baseline subtraction algorithms (pybaselines): <a class="reference external" href="https://pybaselines.readthedocs.io/en/latest/algorithms/index.html">https://pybaselines.readthedocs.io/en/latest/algorithms/index.html</a></p>
+<p>Paul Eiler ‘A Perfect Smoother’ paper: <a class="reference external" href="https://doi.org/10.1021/ac034173t">https://doi.org/10.1021/ac034173t</a></p>
+<p>Whitaker-Hayes despiking: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0169743918301758">https://www.sciencedirect.com/science/article/pii/S0169743918301758</a></p>
+</section>
+<section id="Import-packages">
+<h2>Import packages<a class="headerlink" href="#Import-packages" title="Link to this heading"></a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ramanlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rl</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ramanspy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Code-Examples">
+<h2>Code Examples<a class="headerlink" href="#Code-Examples" title="Link to this heading"></a></h2>
+<p>Todo: add a section on mean_spectrum_per_group() and filtering using GSC</p>
+<section id="Loading-Raman-Data-From-.csv-File">
+<h3>Loading Raman Data From .csv File<a class="headerlink" href="#Loading-Raman-Data-From-.csv-File" title="Link to this heading"></a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">load_colon_spectra</span><span class="p">(</span><span class="n">csv_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load colon tissue Raman spectra into a GroupedSpectralContainer from a CSV file.</span>
+
+<span class="sd">    Filters to spectra labeled as &#39;Normal&#39;, &#39;Adenom&#39;, or &#39;Karzinom&#39; and tissue type &#39;preparation&#39;.</span>
+<span class="sd">    Returns a GroupedSpectralContainer and a NumPy array of binary labels (0 = normal, 1 = abnormal).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Read CSV</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_path</span><span class="p">)</span>
+
+    <span class="c1"># Filter to valid, usable spectra</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Annotation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span> <span class="s1">&#39;Adenom&#39;</span><span class="p">,</span> <span class="s1">&#39;Karzinom&#39;</span><span class="p">])</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tissue&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;preparation&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Create binary labels</span>
+    <span class="n">label_map</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Normal&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Adenom&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Karzinom&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Annotation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">label_map</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+    <span class="c1"># Extract metadata</span>
+    <span class="n">replicates</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;annotation&quot;</span><span class="p">:</span> <span class="n">annotation</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="s2">&quot;tissue&quot;</span><span class="p">:</span> <span class="n">tissue</span><span class="p">,</span>
+            <span class="s2">&quot;replicate&quot;</span><span class="p">:</span> <span class="n">replicate</span><span class="p">,</span>
+            <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">label</span>  <span class="c1"># binary: 0 or 1</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="n">annotation</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tissue</span><span class="p">,</span> <span class="n">replicate</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Annotation&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tissue&#39;</span><span class="p">],</span> <span class="n">replicates</span><span class="p">,</span> <span class="n">labels</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Isolate spectral data</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;^Unnamed&#39;</span><span class="p">)]</span>  <span class="c1"># Remove index column if present</span>
+    <span class="n">spectral_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Annotation&#39;</span><span class="p">,</span> <span class="s1">&#39;Tissue&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Extract spectra and axis</span>
+    <span class="n">spectra_array</span> <span class="o">=</span> <span class="n">spectral_df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">spectral_axis</span> <span class="o">=</span> <span class="n">spectral_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+    <span class="c1"># Build Spectrum objects</span>
+    <span class="n">spectra</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">rp</span><span class="o">.</span><span class="n">Spectrum</span><span class="p">(</span><span class="n">spectral_data</span><span class="p">,</span> <span class="n">spectral_axis</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">spectral_data</span> <span class="ow">in</span> <span class="n">spectra_array</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Return wrapped container</span>
+    <span class="n">container</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">GroupedSpectralContainer</span><span class="p">(</span><span class="n">spectral_list</span><span class="o">=</span><span class="n">spectra</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">container</span><span class="p">,</span> <span class="n">labels</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_gsc</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">load_colon_spectra</span><span class="p">(</span><span class="s2">&quot;/home/linux_thoma/git/aranexx_sers_analysis/ramanlib/DATA_dp_wc_bc.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Visualising-Raw-Data">
+<h3>Visualising Raw Data<a class="headerlink" href="#Visualising-Raw-Data" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_per_group</span><span class="p">(</span><span class="n">raw_gsc</span><span class="p">,</span>
+                       <span class="n">by</span><span class="o">=</span><span class="s2">&quot;annotation&quot;</span><span class="p">,</span>
+                       <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;stacked&quot;</span><span class="p">,</span>
+                       <span class="n">label</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Adenoma&quot;</span><span class="p">,</span> <span class="s2">&quot;Carcinoma&quot;</span><span class="p">,</span> <span class="s2">&quot;Normal&quot;</span><span class="p">],</span>
+                       <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_12_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_12_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">random_per_group</span><span class="p">(</span><span class="n">raw_gsc</span><span class="p">,</span>
+                         <span class="s2">&quot;annotation&quot;</span><span class="p">,</span>
+                         <span class="n">n_samples</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                         <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;stacked&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_13_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_13_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">raw_gsc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+440
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># See counts of each annotation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Annotation counts:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raw_gsc</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;annotation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Annotation counts:
+annotation
+Normal      226
+Adenom      153
+Karzinom     61
+Name: count, dtype: int64
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check combinations of tissue type, annotation and label</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Annotation by tissue type:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raw_gsc</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;tissue&#39;</span><span class="p">,</span> <span class="s1">&#39;annotation&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Annotation by tissue type:
+tissue       annotation  label
+preparation  Adenom      1        153
+             Karzinom    1         61
+             Normal      0        226
+dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="Indexing-data-using-Grouped-Spectral-Containers">
+<h3>Indexing data using Grouped Spectral Containers<a class="headerlink" href="#Indexing-data-using-Grouped-Spectral-Containers" title="Link to this heading"></a></h3>
+<p>The Grouped Spectral Container class has been designed to be a relatively light-weight addition to the pandas dataframe. The main purpose is to provide abstracted methods for creating a container, so that the format of each container consistent whenever a container is created or modified (for example, always having a ‘Spectrum’ column). This allows for consistent handling of the data by external methods.</p>
+<p>Additionally, a few core functions are encapsulated in the class for convenience, including GroupedSpectralContainer.mean which returns the mean spectra by metadata group, along with group statistics. This functionality is used repeatedly by external functions that required mean spectra, so it is implemented as a method of the class.</p>
+<p>Users are expected to handle data mainly through the dataframe object of the GSC class, which is contained in the GroupedSpectralContainer.df attribute. This way, they can utilise any of pandas’ wide breadth of data manipulation methods, while having the consistent format of a Grouped Spectral Container.</p>
+<p>For convenience, the GSC class allows users to access data rows by key and boolean indexing, just as you would with a panda dataframe. The result is a GSC containing the resulting rows. This is the main intended method for indexing the GSC. Some examples are shown below.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">raw_gsc</span><span class="p">)</span>
+<span class="c1"># Print summary of the Grouped Spectral Container to see its columns and structure</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+GroupedSpectralContainer(440 spectra)
+
+                                            spectrum annotation          name  \
+0  &lt;ramanspy.core.Spectrum object at 0x7f093b210fa0&gt;     Normal  M10_C2_I_001
+1  &lt;ramanspy.core.Spectrum object at 0x7f093b210ee0&gt;     Normal  M10_C2_I_002
+2  &lt;ramanspy.core.Spectrum object at 0x7f08c9306550&gt;     Normal  M10_C2_I_003
+3  &lt;ramanspy.core.Spectrum object at 0x7f08c93065b0&gt;     Normal  M10_R1_I_001
+4  &lt;ramanspy.core.Spectrum object at 0x7f08c9306520&gt;     Normal  M10_R1_I_002
+
+        tissue replicate  label
+0  preparation       M10      0
+1  preparation       M10      0
+2  preparation       M10      0
+3  preparation       M10      0
+4  preparation       M10      0
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_gsc</span><span class="p">[</span><span class="n">raw_gsc</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;M10_C2_I_002&quot;</span><span class="p">]</span> <span class="c1"># Get spectrum with specific name</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+GroupedSpectralContainer(1 spectra)
+
+                                            spectrum annotation          name  \
+0  &lt;ramanspy.core.Spectrum object at 0x7f093b210ee0&gt;     Normal  M10_C2_I_002
+
+        tissue replicate  label
+0  preparation       M10      0
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_gsc</span><span class="p">[</span><span class="n">raw_gsc</span><span class="p">[</span><span class="s2">&quot;annotation&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Normal&quot;</span><span class="p">]</span> <span class="c1"># Get all normal spectra</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+GroupedSpectralContainer(226 spectra)
+
+                                            spectrum annotation          name  \
+0  &lt;ramanspy.core.Spectrum object at 0x7f093b210fa0&gt;     Normal  M10_C2_I_001
+1  &lt;ramanspy.core.Spectrum object at 0x7f093b210ee0&gt;     Normal  M10_C2_I_002
+2  &lt;ramanspy.core.Spectrum object at 0x7f08c9306550&gt;     Normal  M10_C2_I_003
+3  &lt;ramanspy.core.Spectrum object at 0x7f08c93065b0&gt;     Normal  M10_R1_I_001
+4  &lt;ramanspy.core.Spectrum object at 0x7f08c9306520&gt;     Normal  M10_R1_I_002
+
+        tissue replicate  label
+0  preparation       M10      0
+1  preparation       M10      0
+2  preparation       M10      0
+3  preparation       M10      0
+4  preparation       M10      0
+</pre></div></div>
+</div>
+</section>
+<section id="Getting-the-Mean-Spectra-of-groups-from-a-GroupedSpectralContainer">
+<h3>Getting the Mean Spectra of groups from a GroupedSpectralContainer<a class="headerlink" href="#Getting-the-Mean-Spectra-of-groups-from-a-GroupedSpectralContainer" title="Link to this heading"></a></h3>
+<p>This is one of the only processing functions provided as a method of GSC, because of how common it is to calculate the mean spectra of a GSC.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_gsc</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">include_stats</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+GroupedSpectralContainer(3 spectra)
+
+                                            spectrum annotation
+0  &lt;ramanspy.core.Spectrum object at 0x7f08c8738820&gt;     Adenom
+1  &lt;ramanspy.core.Spectrum object at 0x7f08c832ca90&gt;   Karzinom
+2  &lt;ramanspy.core.Spectrum object at 0x7f08c867e1f0&gt;     Normal
+</pre></div></div>
+</div>
+<p>If include_stats is set to True, columns are included for the number of spectra, n, and variance and standard deviation vectors representing the respective statistics at each wavenumber.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_gsc</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">include_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+GroupedSpectralContainer(3 spectra)
+
+                                            spectrum annotation    n  \
+0  &lt;ramanspy.core.Spectrum object at 0x7f08c82365e0&gt;     Adenom  153
+1  &lt;ramanspy.core.Spectrum object at 0x7f08c920f3a0&gt;   Karzinom   61
+2  &lt;ramanspy.core.Spectrum object at 0x7f08c867eb50&gt;     Normal  226
+
+                                          var_vector  \
+0  [520.4194673877299, 503.88377010656234, 512.23...
+1  [571.2872052156648, 657.1600115317982, 715.176...
+2  [367.4185047731241, 352.60715821628526, 372.02...
+
+                                          std_vector
+0  [22.812704078818232, 22.447355525909114, 22.63...
+1  [23.90161511730253, 25.63513236813491, 26.7427...
+2  [19.168163834158037, 18.777836888637765, 19.28...
+</pre></div></div>
+</div>
+</section>
+<section id="Calibrate-Raw-Spectra">
+<h3>Calibrate Raw Spectra<a class="headerlink" href="#Calibrate-Raw-Spectra" title="Link to this heading"></a></h3>
+<section id="Example:-Detecting-wavenumber-shift-from-internal-Si-calibration-standard">
+<h4>Example: Detecting wavenumber shift from internal Si calibration standard<a class="headerlink" href="#Example:-Detecting-wavenumber-shift-from-internal-Si-calibration-standard" title="Link to this heading"></a></h4>
+<p>To demonstrate the calibration functions, I generate hypothetical internal silicon spectral data, which contains a single high-intensity peak. A study conducted by Itoh et al. estimates that the main silicon band is situated at 520.45 ± 0.28 cm-1 for Si 100.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate hypothetical internal silicon standard spectra</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">ideal_center</span> <span class="o">=</span> <span class="mf">520.45</span>
+<span class="n">allowed_halfwidth</span> <span class="o">=</span> <span class="mf">0.28</span>
+<span class="n">center_sd</span> <span class="o">=</span> <span class="mf">0.2</span>      <span class="c1"># ~few % outside the window</span>
+<span class="n">amp_range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">1200</span><span class="p">)</span>
+<span class="n">sigma_range</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span>
+<span class="n">noise_frac</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+
+<span class="c1"># Wavenumber axis around the Si line</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">560</span><span class="p">,</span> <span class="mi">1601</span><span class="p">)</span>
+
+<span class="c1"># Random peak parameters</span>
+<span class="n">centers</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">ideal_center</span><span class="p">,</span> <span class="n">center_sd</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">amps</span>    <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">*</span><span class="n">amp_range</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">sigmas</span>  <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">*</span><span class="n">sigma_range</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">spectra</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span> <span class="n">amps</span><span class="p">,</span> <span class="n">sigmas</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">y</span> <span class="o">+=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">noise_frac</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># noise</span>
+    <span class="n">spectra</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rp</span><span class="o">.</span><span class="n">Spectrum</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Minimal fake metadata: rotating dates and 3x3 spots</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+<span class="n">spots</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">dates</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">dates</span><span class="p">)],</span> <span class="s2">&quot;spot&quot;</span><span class="p">:</span> <span class="n">spots</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">spots</span><span class="p">)]}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="c1"># Build GroupedSpectralContainer</span>
+<span class="n">calib_gsc</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">GroupedSpectralContainer</span><span class="p">(</span><span class="n">spectra</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Plot randomly selected spectra to visualy verify.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calib_gsc</span><span class="o">.</span><span class="n">plot_random</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_33_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_33_0.png" />
+</div>
+</div>
+<p>Check the calibration of a single spectrum</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shift_value</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">calib</span><span class="o">.</span><span class="n">get_wn_shift</span><span class="p">(</span><span class="n">calib_gsc</span><span class="p">[</span><span class="s2">&quot;spectrum&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="mf">520.45</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shift_value</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+-0.20040853529974356
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_35_1.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_35_1.png" />
+</div>
+</div>
+<p>Check the calibration of the entire GSC and return a GSC of uncalibrated spectra</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fail_gsc</span><span class="p">,</span> <span class="n">new_gsc</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">calib</span><span class="o">.</span><span class="n">get_gsc_wn_shifts</span><span class="p">(</span>
+    <span class="n">calib_gsc</span><span class="p">,</span>
+    <span class="p">[</span><span class="mf">520.17</span><span class="p">,</span> <span class="mf">520.73</span><span class="p">],</span>
+    <span class="mf">520.45</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fail_gsc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fail_gsc</span><span class="p">[</span><span class="s2">&quot;shift&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="c1"># All shifts in the fail gsc are above 0.28, as expected, since we used the range 520.45 +- 0.28</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+GroupedSpectralContainer(11 spectra)
+
+                                            spectrum        date   spot  \
+0  &lt;ramanspy.core.Spectrum object at 0x7f08c8638d90&gt;  2025-08-01  (1,1)
+1  &lt;ramanspy.core.Spectrum object at 0x7f08c8638e80&gt;  2025-08-01  (1,3)
+2  &lt;ramanspy.core.Spectrum object at 0x7f08c8638f40&gt;  2025-08-01  (3,3)
+3  &lt;ramanspy.core.Spectrum object at 0x7f08c8638cd0&gt;  2025-08-01  (2,1)
+4  &lt;ramanspy.core.Spectrum object at 0x7f08c86634f0&gt;  2025-08-02  (1,1)
+
+       x0_fit     shift
+0  520.069173 -0.380827
+1  520.081641 -0.368359
+2  519.940991 -0.509009
+3  520.144087 -0.305913
+4  520.141240 -0.308760
+0.2853408681394285
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">new_gsc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+GroupedSpectralContainer(100 spectra)
+
+                                            spectrum        date   spot  \
+0  &lt;ramanspy.core.Spectrum object at 0x7f08c8644c40&gt;  2025-08-01  (1,1)
+1  &lt;ramanspy.core.Spectrum object at 0x7f093b2c1ac0&gt;  2025-08-02  (1,2)
+2  &lt;ramanspy.core.Spectrum object at 0x7f08c8644be0&gt;  2025-08-01  (1,3)
+3  &lt;ramanspy.core.Spectrum object at 0x7f08c8644d00&gt;  2025-08-02  (2,1)
+4  &lt;ramanspy.core.Spectrum object at 0x7f08c8644d60&gt;  2025-08-01  (2,2)
+
+       x0_fit     shift
+0  520.447505 -0.002495
+1  520.509446  0.059446
+2  520.396104 -0.053896
+3  520.271215 -0.178785
+4  520.355366 -0.094634
+</pre></div></div>
+</div>
+<p>Using the shift values and dates given in these grouped spectra containers, we are able to apply a wavenumber shift to other data collected on or near the same day.</p>
+</section>
+</section>
+<section id="Choose-Best-Baseline-Subtraction-Algorithm">
+<h3>Choose Best Baseline Subtraction Algorithm<a class="headerlink" href="#Choose-Best-Baseline-Subtraction-Algorithm" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">baseline</span><span class="p">(</span><span class="n">raw_gsc</span><span class="p">[</span><span class="s2">&quot;spectrum&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">ASLS</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_42_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_42_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">n_baselines</span><span class="p">(</span><span class="n">raw_gsc</span><span class="p">,</span> <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">ASLS</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span> <span class="s2">&quot;ASLS&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_43_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_43_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">processes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">IARPLS</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">IARPLS</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">IARPLS</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">IARPLS</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">10000</span><span class="p">),</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">IARPLS</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;lam = 10&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lam = 100&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lam = 1000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lam = 10000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lam = 100000&quot;</span>
+<span class="p">]</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">compare_baselines</span><span class="p">(</span><span class="n">raw_gsc</span><span class="p">[</span><span class="s2">&quot;spectrum&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">processes</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_44_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_44_0.png" />
+</div>
+</div>
+</section>
+<section id="Pipeline">
+<h3>Pipeline<a class="headerlink" href="#Pipeline" title="Link to this heading"></a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the pipeline.</span>
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">([</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">despike</span><span class="o">.</span><span class="n">WhitakerHayes</span><span class="p">(),</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">IARPLS</span><span class="p">(</span><span class="n">lam</span> <span class="o">=</span> <span class="mi">300</span><span class="p">),</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">normalise</span><span class="o">.</span><span class="n">MaxIntensity</span><span class="p">(),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prepro_gsc</span> <span class="o">=</span> <span class="n">raw_gsc</span><span class="o">.</span><span class="n">apply_pipeline</span><span class="p">(</span><span class="n">pipe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Visualising-Preprocessed-Spectra">
+<h3>Visualising Preprocessed Spectra<a class="headerlink" href="#Visualising-Preprocessed-Spectra" title="Link to this heading"></a></h3>
+<section id="Individual-Spectra">
+<h4>Individual Spectra<a class="headerlink" href="#Individual-Spectra" title="Link to this heading"></a></h4>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot random spectra before and after preprocessing</span>
+<span class="c1"># Create 1 row, 2 column subplot layout</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Adjust figsize as needed</span>
+
+<span class="c1"># Plot randomly selected raw spectra</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">random_per_group</span><span class="p">(</span><span class="n">raw_gsc</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Raw Spectra&quot;</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Plot randomly selected preprocessed spectra</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">random_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Preprocessed Spectra&quot;</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_50_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_50_0.png" />
+</div>
+</div>
+</section>
+<section id="Mean-Spectra">
+<h4>Mean Spectra<a class="headerlink" href="#Mean-Spectra" title="Link to this heading"></a></h4>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstrate the full customisability of the plot functions</span>
+<span class="n">prepro_gsc</span><span class="o">.</span><span class="n">plot_mean</span><span class="p">(</span>
+    <span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">],</span>
+    <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">,</span>
+    <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Adenoma&quot;</span><span class="p">,</span> <span class="s2">&quot;Carcinoma&quot;</span><span class="p">,</span> <span class="s2">&quot;Normal&quot;</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">],</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;My Raman Spectra&quot;</span><span class="p">,</span>
+    <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;My x axis&quot;</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Counts&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_52_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_52_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;stacked&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_53_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_53_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_per_group</span><span class="p">(</span><span class="n">rl</span><span class="o">.</span><span class="n">GroupedSpectralContainer</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">150</span><span class="p">]),</span> <span class="s2">&quot;replicate&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single stacked&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_54_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_54_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just for demonstration purposes, plot the same mean spectra 4 times in a 2x2 grid</span>
+<span class="c1"># This shows how to create subplots and pass axes to the plot functions</span>
+
+<span class="c1"># Create 1 row, 2 column subplot layout</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># Adjust figsize as needed</span>
+
+<span class="c1"># Plot mean spectra before and after preprocessing</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Preprocessed Means&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Preprocessed Means&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Preprocessed Means&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Preprocessed Means&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_55_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_55_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot mean spectra before and after preprocessing</span>
+<span class="c1"># Create 1 row, 2 column subplot layout</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Adjust figsize as needed</span>
+
+<span class="c1"># Plot mean spectra before and after preprocessing</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_per_group</span><span class="p">(</span><span class="n">raw_gsc</span><span class="p">,</span> <span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Raw Means&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Preprocessed Means&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_56_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_56_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="Quality-Control">
+<h3>Quality Control<a class="headerlink" href="#Quality-Control" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">outliers_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="n">rp</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">MSE</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">n_spectra</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;Adenom&#39;: ([148], &lt;ramanspy.core.Spectrum at 0x7f08c8701250&gt;),
+ &#39;Karzinom&#39;: ([69], &lt;ramanspy.core.Spectrum at 0x7f08c0fe96a0&gt;),
+ &#39;Normal&#39;: ([393], &lt;ramanspy.core.Spectrum at 0x7f08c8083370&gt;)}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">axes</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">outliers_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_59_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_59_0.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_59_1.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_59_1.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_59_2.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_59_2.png" />
+</div>
+</div>
+<p>The Carcinoma sample at index 69 looks like an error in measurement has made it too noisy, so we will remove it from the dataset.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_gsc</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">GroupedSpectralContainer</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">69</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<p>Now when we redo the outliers calculation, the Carcinoma index return 59, showing that the spectrum at index 69 was removed successfully. 59 is now the index of the next most-outlying spectrum.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">outliers_per_group</span><span class="p">(</span><span class="n">cleaned_gsc</span><span class="p">,</span> <span class="n">rp</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">MSE</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">n_spectra</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;Adenom&#39;: ([147], &lt;ramanspy.core.Spectrum at 0x7f08c0ef6190&gt;),
+ &#39;Karzinom&#39;: ([59], &lt;ramanspy.core.Spectrum at 0x7f08c0ef6220&gt;),
+ &#39;Normal&#39;: ([392], &lt;ramanspy.core.Spectrum at 0x7f08c0ef65b0&gt;)}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">axes</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">outliers_per_group</span><span class="p">(</span><span class="n">cleaned_gsc</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_64_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_64_0.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_64_1.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_64_1.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_64_2.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_64_2.png" />
+</div>
+</div>
+</section>
+<section id="Between-Group-Analysis">
+<h3>Between-Group Analysis<a class="headerlink" href="#Between-Group-Analysis" title="Link to this heading"></a></h3>
+<section id="Difference-in-Mean-Spectra">
+<h4>Difference in Mean Spectra<a class="headerlink" href="#Difference-in-Mean-Spectra" title="Link to this heading"></a></h4>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group_stats</span> <span class="o">=</span> <span class="n">prepro_gsc</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="n">include_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">group1_stats</span> <span class="o">=</span> <span class="n">group_stats</span><span class="p">[</span><span class="n">group_stats</span><span class="p">[</span><span class="s2">&quot;annotation&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Normal&quot;</span><span class="p">]</span>
+<span class="n">group2_stats</span> <span class="o">=</span> <span class="n">group_stats</span><span class="p">[</span><span class="n">group_stats</span><span class="p">[</span><span class="s2">&quot;annotation&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Adenom&quot;</span><span class="p">]</span>
+<span class="n">group3_stats</span> <span class="o">=</span> <span class="n">group_stats</span><span class="p">[</span><span class="n">group_stats</span><span class="p">[</span><span class="s2">&quot;annotation&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Karzinom&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff_spectrum_1</span><span class="p">,</span> <span class="n">ci_band_1</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">mean_difference</span><span class="p">(</span><span class="n">group1_stats</span><span class="p">,</span> <span class="n">group2_stats</span><span class="p">)</span>
+<span class="n">diff_spectrum_2</span><span class="p">,</span> <span class="n">ci_band_2</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">mean_difference</span><span class="p">(</span><span class="n">group2_stats</span><span class="p">,</span> <span class="n">group3_stats</span><span class="p">)</span>
+<span class="n">diff_spectrum_3</span><span class="p">,</span> <span class="n">ci_band_3</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">mean_difference</span><span class="p">(</span><span class="n">group3_stats</span><span class="p">,</span> <span class="n">group1_stats</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rp</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">spectra</span><span class="p">([</span><span class="n">group1_stats</span><span class="p">[</span><span class="s2">&quot;spectrum&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">group2_stats</span><span class="p">[</span><span class="s2">&quot;spectrum&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span> <span class="s2">&quot;Adenom&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_69_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_69_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_difference</span><span class="p">(</span><span class="n">diff_spectrum_1</span><span class="p">,</span> <span class="n">ci_band_1</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Normal - Adenoma&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_difference</span><span class="p">(</span><span class="n">diff_spectrum_2</span><span class="p">,</span> <span class="n">ci_band_2</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Adenoma - Carcinoma&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_difference</span><span class="p">(</span><span class="n">diff_spectrum_3</span><span class="p">,</span> <span class="n">ci_band_3</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Carcinoma - Normal&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_70_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_70_0.png" />
+</div>
+</div>
+</section>
+<section id="Correlation-Coefficient-by-Annotation">
+<h4>Correlation Coefficient by Annotation<a class="headerlink" href="#Correlation-Coefficient-by-Annotation" title="Link to this heading"></a></h4>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">mean_correlation_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="s2">&quot;annotation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_correlation_per_group</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.98</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_73_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_73_0.png" />
+</div>
+</div>
+</section>
+<section id="Correlation-Coefficient-by-Replicate">
+<h4>Correlation Coefficient by Replicate<a class="headerlink" href="#Correlation-Coefficient-by-Replicate" title="Link to this heading"></a></h4>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">mean_correlation_per_group</span><span class="p">(</span><span class="n">prepro_gsc</span><span class="p">,</span> <span class="s2">&quot;replicate&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mean_correlation_per_group</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.90</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_76_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_76_0.png" />
+</div>
+</div>
+</section>
+<section id="Next-step:-Loading-and-score-plots-(Guo-et-al-SOP-step-23)">
+<h4>Next step: Loading and score plots (Guo et al SOP step 23)<a class="headerlink" href="#Next-step:-Loading-and-score-plots-(Guo-et-al-SOP-step-23)" title="Link to this heading"></a></h4>
+</section>
+</section>
+<section id="Classical-Least-Squares-for-Spectral-Subtraction">
+<h3>Classical Least Squares for Spectral Subtraction<a class="headerlink" href="#Classical-Least-Squares-for-Spectral-Subtraction" title="Link to this heading"></a></h3>
+<p>The CLS algorithm works on single spectra, so here I import data directly as ramanspy Spectrum objects. These can be mean spectra or single spectra as needed.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># Base directory: folder containing this script</span>
+<span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+<span class="c1"># Example data folder inside ramanlib</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s2">&quot;CLS_example_data&quot;</span><span class="p">)</span>
+
+<span class="c1"># Build relative paths</span>
+<span class="n">grating</span> <span class="o">=</span> <span class="n">rp</span><span class="o">.</span><span class="n">load</span><span class="o">.</span><span class="n">renishaw</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="s2">&quot;grating 10s 50_ 3acc 532nm 1200lmm extended range 200-3600 spot 1.wdf&quot;</span><span class="p">))</span>
+<span class="n">water</span> <span class="o">=</span> <span class="n">rp</span><span class="o">.</span><span class="n">load</span><span class="o">.</span><span class="n">renishaw</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="s2">&quot;water 10s 10_ 3acc 532nm 1200lmm extended range 200-3600 spot 3.wdf&quot;</span><span class="p">))</span>
+<span class="n">ethanol</span> <span class="o">=</span> <span class="n">rp</span><span class="o">.</span><span class="n">load</span><span class="o">.</span><span class="n">renishaw</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="s2">&quot;ethanol 10s 1_ 3acc 532nm 1200lmm extended range 200-3600 spot 1.wdf&quot;</span><span class="p">))</span>
+<span class="n">water_and_ethanol</span> <span class="o">=</span> <span class="n">rp</span><span class="o">.</span><span class="n">load</span><span class="o">.</span><span class="n">renishaw</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="s2">&quot;water and ethanol 10s 10_ 3acc 532nm 1200lmm extended range 200-3600 spot 1.wdf&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rp</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">spectra</span><span class="p">([</span><span class="n">grating</span><span class="p">,</span> <span class="n">water</span><span class="p">,</span> <span class="n">ethanol</span><span class="p">,</span> <span class="n">water_and_ethanol</span><span class="p">],</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_81_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_81_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">([</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">despike</span><span class="o">.</span><span class="n">WhitakerHayes</span><span class="p">(),</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">IARPLS</span><span class="p">(</span><span class="n">lam</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">),</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">normalise</span><span class="o">.</span><span class="n">MaxIntensity</span><span class="p">(),</span>
+<span class="p">])</span>
+
+<span class="n">grating_prepro</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">grating</span><span class="p">)</span>
+<span class="n">water_prepro</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">water</span><span class="p">)</span>
+<span class="n">ethanol_prepro</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">ethanol</span><span class="p">)</span>
+<span class="n">water_and_ethanol_prepro</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">water_and_ethanol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rp</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">spectra</span><span class="p">([</span><span class="n">grating_prepro</span><span class="p">,</span> <span class="n">water_prepro</span><span class="p">,</span> <span class="n">ethanol_prepro</span><span class="p">,</span> <span class="n">water_and_ethanol_prepro</span><span class="p">],</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_83_0.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_83_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cs</span><span class="p">,</span> <span class="n">res_spec</span><span class="p">,</span> <span class="n">fitted_components_spec</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">CLS</span><span class="p">(</span><span class="n">water_and_ethanol_prepro</span><span class="p">,</span> <span class="p">[</span><span class="n">grating_prepro</span><span class="p">,</span> <span class="n">water_prepro</span><span class="p">,</span> <span class="n">ethanol_prepro</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;grating&quot;</span><span class="p">,</span> <span class="s2">&quot;water&quot;</span><span class="p">,</span> <span class="s2">&quot;ethanol&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+components:
+grating, -0.11092895269393921
+water, 1.0101244449615479
+ethanol, 0.012555450201034546
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_84_1.png" src="../../../../../../../../../_images/_build_html__build_doctrees_nbsphinx__build_doctrees_nbsphinx_guides_example_notebook_84_1.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
