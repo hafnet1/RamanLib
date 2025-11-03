@@ -13,6 +13,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx_autodoc_typehints",
     "nbsphinx",
+    "sphinx.ext.intersphinx",
 ]
 
 # --- basics ---
@@ -53,4 +54,12 @@ autodoc_default_options = {
     "show-inheritance": True,
     "inherited-members": True,
     "exclude-members": "__weakref__",
+}
+
+# Intersphinx: link to other projects' documentation
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+    "numpy": ("https://numpy.org/doc/stable/", None),
+    "pandas": ("https://pandas.pydata.org/pandas-docs/stable/", None),
+    "ramanspy": ("https://ramanspy.readthedocs.io/en/latest/", None),
 }

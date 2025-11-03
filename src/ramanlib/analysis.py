@@ -1,3 +1,24 @@
+"""
+Analysis routines for Raman spectral data. This focuses on single-spectrum analysis
+methods or methods that don't require heavy grouping or metadata management.
+
+This module currently provides a Classical Least Squares (CLS) unmixing routine
+that decomposes a query spectrum into a linear combination of reference
+(component) spectra using linear regression. Outputs include the fitted
+coefficients, the residual spectrum, and the scaled component spectra that best
+fit the query under a least-squares criterion.
+
+See Also
+--------
+ramanspy.Spectrum
+    RamanSPy spectrum class used throughout.
+sklearn.linear_model.LinearRegression
+    Estimator used to obtain CLS coefficients.
+
+"""
+
+from __future__ import annotations
+
 import numpy as np
 import ramanspy as rp
 from sklearn import linear_model
@@ -5,28 +26,30 @@ from sklearn import linear_model
 
 def CLS(query_spec, components_spec, component_names, plot=True, verbose=True):
     """
-    Perform classical least squares (CLS) spectral unmixing.
+    Classical Least Squares (CLS) spectral unmixing.
 
-    Decomposes a query spectrum into a linear combination of given component spectra
-    using linear regression. Returns the fitted coefficients, residual spectrum, and
-    individual component contributions. Optionally displays a plot and prints the results.
+    Parameters
+    ----------
+    query_spec : rp.Spectrum
+    components_spec : list[rp.Spectrum]
+    component_names : list[str]
+    plot : bool, optional
+        If True, plot query, residual, and fitted component spectra. Default True.
+    verbose : bool, optional
+        If True, print component names and coefficients. Default True.
 
-    Parameters:
-        query_spec (rp.Spectrum): The target spectrum to be decomposed.
-        components_spec (list of rp.Spectrum): Reference component spectra.
-        component_names (list of str): Names corresponding to each component.
-        plot (bool): If True, plots the query, residual, and component spectra.
-        verbose (bool): If True, prints component names and their corresponding coefficients.
-
-    Returns:
-        tuple:
-            - cs (np.ndarray): Fitted CLS coefficients.
-            - res_spec (rp.Spectrum): Residual spectrum after fitting.
-            - fitted_components_spec (list of rp.Spectrum): Scaled component spectra.
+    Returns
+    -------
+    cs : numpy.ndarray
+    res_spec : rp.Spectrum
+    fitted_components_spec : list[rp.Spectrum]
     """
-    
-    # Check that all components have the same number of datapoints as the query spectrum
-    assert all(len(query_spec.spectral_axis) == len(component.spectral_axis) for component in components_spec), "All components must have the same spectral axis length as the mixture spectrum"
+    # Basic checks
+    assert all(len(query_spec.spectral_axis) == len(c.spectral_axis) for c in components_spec), (
+        "All components must have the same spectral axis length as the mixture spectrum"
+    )
+    if len(component_names) != len(components_spec):
+        raise ValueError("component_names must match components_spec in length and order.")
 
     # Get the CLS coefficients
     components = np.array([component.spectral_data for component in components_spec])
@@ -42,14 +65,18 @@ def CLS(query_spec, components_spec, component_names, plot=True, verbose=True):
     
     res_spec = rp.Spectrum(res, query_spec.spectral_axis)
     
-    print("components:\n" + "\n".join(f"{name}, {c}" for name, c in zip(component_names, cs)))
+    # Verbose print
+    if verbose:
+        print("components:\n" + "\n".join(f"{name}, {c}" for name, c in zip(component_names, cs)))
 
-    # First figure: query, residual, and fitted components
-    rp.plot.spectra(
-        [query_spec, res_spec] + fitted_components_spec,
-        label=["query", "residual"] + component_names,
-        plot_type="single",
-        alpha=0.8,
-    )
+    # Optional plot
+    if plot:
+        # query, residual, and fitted components
+        rp.plot.spectra(
+            [query_spec, res_spec] + fitted_components_spec,
+            label=["query", "residual"] + component_names,
+            plot_type="single",
+            alpha=0.8,
+        )
 
     return cs, res_spec, fitted_components_spec

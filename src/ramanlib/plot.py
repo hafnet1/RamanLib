@@ -278,13 +278,14 @@ def baseline(spectrum, baseline_process, **kwargs):
     Parameters
     ----------
     spectrum : rp.Spectrum
-        Input spectrum.
-    baseline_process : object
-        Any object exposing ``.apply(Spectrum) -> Spectrum`` that performs baseline
-        correction (e.g., a RamanSPy pipeline step).
+        Input spectrum to correct.
+    baseline_process : ramanspy.preprocessing.PreprocessingStep or ramanspy.preprocessing.Pipeline
+        A single preprocessing step or a multi-step preprocessing pipeline from RamanSPy.
+        The object must expose ``.apply(Spectrum) -> Spectrum``, returning the corrected
+        spectrum on the same spectral axis (Raman wavenumber cm⁻¹).
     **kwargs
         Forwarded to :func:`ramanspy.plot.spectra` (e.g., ``ax``, ``alpha``,
-        ``linewidth``, color styling, etc.).
+        line styling, etc.).
 
     Returns
     -------
@@ -293,9 +294,14 @@ def baseline(spectrum, baseline_process, **kwargs):
 
     Notes
     -----
-    The baseline is computed as ``baseline = original - corrected`` and plotted
-    alongside the original and corrected spectra with fixed labels:
+    The baseline is computed as ``baseline = original - corrected`` and plotted alongside
+    the original and corrected spectra with fixed labels:
     ``["Original spectrum", "removed baseline", "corrected spectrum"]``.
+
+    See Also
+    --------
+    ramanspy.preprocessing.PreprocessingStep
+    ramanspy.preprocessing.Pipeline
 
     """
     corrected_spectrum = baseline_process.apply(spectrum)
@@ -313,9 +319,9 @@ def n_baselines(raw_gsc, baseline_process, process_name, n_samples=3, figsize=(8
     ----------
     raw_gsc : GroupedSpectralContainer
         Container from which spectra are sampled.
-    baseline_process : object
-        Any object exposing ``.apply(Spectrum) -> Spectrum`` that performs baseline
-        correction (e.g., a RamanSPy pipeline step).
+    baseline_process : ramanspy.preprocessing.PreprocessingStep or ramanspy.preprocessing.Pipeline
+        Baseline-correction operator applied to each sampled spectrum. Must implement
+        ``.apply(Spectrum) -> Spectrum``.
     process_name : str
         Title displayed above the figure.
     n_samples : int, optional
@@ -331,6 +337,11 @@ def n_baselines(raw_gsc, baseline_process, process_name, n_samples=3, figsize=(8
     list[matplotlib.axes.Axes]
         The list of axes for each subplot row.
 
+    See Also
+    --------
+    ramanspy.preprocessing.PreprocessingStep
+    ramanspy.preprocessing.Pipeline
+
     """
     spec_samples = raw_gsc.df.sample(n=n_samples)["spectrum"]
     fig, axs = plt.subplots(n_samples, 1, figsize=figsize)
@@ -344,14 +355,15 @@ def n_baselines(raw_gsc, baseline_process, process_name, n_samples=3, figsize=(8
 
 def compare_baselines(spectrum, baseline_processes, process_names, figsize=(8,7)):
     """
-    Compare multiple baseline algorithms on the same spectrum.
+    Compare multiple baseline algorithms (steps or pipelines) on the same spectrum.
 
     Parameters
     ----------
     spectrum : rp.Spectrum
         Input spectrum to be corrected by each baseline process.
-    baseline_processes : list
-        Sequence of objects exposing ``.apply(Spectrum) -> Spectrum``.
+    baseline_processes : list[ramanspy.preprocessing.PreprocessingStep or ramanspy.preprocessing.Pipeline]
+        Sequence of RamanSPy preprocessing operators. Each must implement
+        ``.apply(Spectrum) -> Spectrum``.
     process_names : list[str]
         Display names for each process. Must have the same length and order as
         ``baseline_processes``.
@@ -363,6 +375,11 @@ def compare_baselines(spectrum, baseline_processes, process_names, figsize=(8,7)
     list[matplotlib.axes.Axes]
         The list of axes for each subplot row.
 
+    See Also
+    --------
+    ramanspy.preprocessing.PreprocessingStep
+    ramanspy.preprocessing.Pipeline
+    
     """
     fig, axs = plt.subplots(len(baseline_processes), 1, figsize=figsize)
     for i, process in enumerate(baseline_processes):
