@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use RamanLib in your research, teaching, or software, please consider citing it."
+title: "RamanLib"
+version: 0.0.2
+authors:
+  - family-names: Hafner
+    given-names: Thomas
+repository-code: "https://github.com/hafnet1/RamanLib"
+url: "https://pypi.org/project/ramanlib/"
+date-released: 2025-11-02
+preferred-citation:
+  type: software
+  title: "RamanLib: A Python toolkit for Raman and SERS data analysis"
+  authors:
+    - family-names: Hafner
+      given-names: Thomas
+  year: 2025
+  url: "https://github.com/hafnet1/RamanLib"
